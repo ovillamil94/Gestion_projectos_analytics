@@ -1,0 +1,12 @@
+﻿id,transformación,descripción,motivo
+T01,VALOR → VALOR_NUM,Quitar comas de miles y convertir a numérico; conservar VALOR original,Evita errores de lectura; trazable
+T02,Fechas texto → datetime,"FECHA_RADICA, FECHA_APERTURA y fecha dentro del documento",Permite series y antigüedad
+T03,Parseo de DOCUMENTO_JUSTIFICATIVO,"Extraer tipo, número, fecha y oficina con expresión regular",Convierte texto libre en campos
+T04,Normalización de notarías,"Unificar 'NOTARIA 15' / 'QUINCE' y corregir errores tipográficos (difflib, cutoff 0.88)",Reduce categorías espurias
+T05,"DOC_KEY, N_FILAS_DOC, N_MATRICULAS_DOC",Llave de agrupación por escritura,Controla dependencia entre filas y duplicación de montos
+T06,Variables temporales,"Año, mes, días escritura→radicación, antigüedad del folio",Posibles predictores/contexto
+T07,LOG_VALOR,log(VALOR) solo para VALOR>0,Distribución muy asimétrica; uso futuro
+T08,Marcas de calidad (FLAG_*),Señalar valores bajos/altos y fechas inconsistentes sin eliminar,Trazabilidad; revisión contextual
+T09,Omitir columnas constantes/vacías,Descartar en la base preparada,Sin información
+T10,Ajuste monetario (NO aplicado),Deflactar con índice externo solo si se justifica fuente y regla,Valores en COP nominales
+T11,Imputación de VALOR (NO aplicada),No imputar; reportar cobertura,Evita inventar el valor objetivo

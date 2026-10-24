@@ -1,0 +1,16 @@
+﻿regla,dimensión,registros_que_incumplen,% del total,nota
+R01 PK termina en el mismo año que YEAR_RADICA (incumple),Consistencia,0,0.0,
+"R02 TIENE_VALOR=1 sin VALOR, o TIENE_VALOR=0 con VALOR",Consistencia,0,0.0,
+R03 VALOR vacío,Completitud,9162,7.995462082206125,
+R04 VALOR = 0,Validez,0,0.0,
+R05 VALOR positivo menor a COP 1.000.000,Validez / atípico,104,0.09075835587747623,"Posible error de digitación, cuota parte o venta simbólica: revisar, no eliminar"
+R06 VALOR mayor a COP 5.000 millones,Atípico,164,0.1431189458067894,Extremo ≠ error
+R07 Documento no sigue el patrón esperado,Validez,0,0.0,
+R08 Tipo de documento distinto de ESCRITURA,Validez,9,0.00785408848939698,CERTIFICADO / OFICIO: actos no notariales
+R09 Fecha del documento posterior a la radicación,Consistencia,6,0.0052360589929313205,
+R10 Fecha de apertura del folio posterior a la radicación,Consistencia,2274,1.9844663583209705,Puede ser legítimo en folios derivados: validar
+R11 COUNT_A = 0,Validez,93,0.08115891439043546,Acto sin comprador contado: validar significado
+R12 COUNT_DE = 0,Validez,22,0.019198882974081507,Acto sin vendedor contado: validar significado
+R13 TIENE_MAS_DE_UN_VALOR = 1,Consistencia,4,0.003490705995287547,VALOR podría no ser único
+"R14 ORIP fuera de {1, 01N}",Validez,0,0.0,
+R15 Brecha escritura→radicación mayor a 365 días,Atípico,1734,1.5132210489571516,Fechas de documento posiblemente mal digitadas
