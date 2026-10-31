@@ -1,0 +1,4 @@
+[core]
+    remote = storage
+['remote "storage"']
+    url = G:\My Drive\Colab_Notebooks\gerenciaproy_dvcstore
